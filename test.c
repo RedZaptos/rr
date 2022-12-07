@@ -14,27 +14,72 @@
 sem_t lock; 
 
 void* p1(){
-	printf("acquiring lock1"); 
 	sem_wait(&lock);
-	printf("entered p1\n");
+	printf("p1 has acquired lock\n"); 
+	while(1){
+		continue; 
+	}
 	printf("ok janu\n");
 	printf("ok janu\n");
 	printf("ok janu\n");
 	printf("ok janu\n");
 	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("p1 has unlocking lock\n");
 	sem_post(&lock); 
 	return NULL ; 
 }
 
 void* p2(){
-	printf("acquiring lock2"); 
 	sem_wait(&lock);
+	printf("p2 has acquired lock\n"); 
 	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("entered p2\n");
+	printf("p2 has unlocking lock\n");
 	sem_post(&lock);
 	return NULL ; 
 }
 
 int main(){
+	sem_init(&lock , 0 , 1); 
 	pthread_t thread1 , thread2;
 	pthread_create(&thread1 , NULL , p1 , NULL); 
 	pthread_create(&thread2 , NULL , p2 , NULL);
