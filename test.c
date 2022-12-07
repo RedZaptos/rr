@@ -11,13 +11,24 @@
 #include <semaphore.h>
 #include <unistd.h>
 
+sem_t lock; 
+
 void* p1(){
+	sem_wait(&lock);
 	printf("entered p1\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	printf("ok janu\n");
+	sem_post(lock); 
 	return NULL ; 
 }
 
 void* p2(){
+	sem_wait(&lock);
 	printf("entered p2\n");
+	sem_post(lock);
 	return NULL ; 
 }
 
