@@ -27,7 +27,7 @@ void* p1(){
 }
 
 void* p2(){
-	printf("acquiring lock1"); 
+	printf("acquiring lock2"); 
 	sem_wait(&lock);
 	printf("entered p2\n");
 	sem_post(&lock);
