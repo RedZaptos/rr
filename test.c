@@ -14,6 +14,7 @@
 sem_t lock; 
 
 void* p1(){
+	printf("acquiring lock1"); 
 	sem_wait(&lock);
 	printf("entered p1\n");
 	printf("ok janu\n");
@@ -26,6 +27,7 @@ void* p1(){
 }
 
 void* p2(){
+	printf("acquiring lock1"); 
 	sem_wait(&lock);
 	printf("entered p2\n");
 	sem_post(&lock);
