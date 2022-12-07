@@ -21,14 +21,14 @@ void* p1(){
 	printf("ok janu\n");
 	printf("ok janu\n");
 	printf("ok janu\n");
-	sem_post(lock); 
+	sem_post(&lock); 
 	return NULL ; 
 }
 
 void* p2(){
 	sem_wait(&lock);
 	printf("entered p2\n");
-	sem_post(lock);
+	sem_post(&lock);
 	return NULL ; 
 }
 
