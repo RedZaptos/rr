@@ -47,6 +47,9 @@ void* p1(){
 void* p2(){
 	sem_wait(&lock);
 	printf("p2 has acquired lock\n"); 
+	while(1){
+		continue; 
+	}
 	printf("entered p2\n");
 	printf("entered p2\n");
 	printf("entered p2\n");
